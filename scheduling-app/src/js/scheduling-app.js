@@ -15,11 +15,13 @@ function slotSearch() {
   // Grab Slot query parameters from the slot-search-form
   var form = document.getElementById('slot-search-form');
   var slotParams = {};
+
   for(var i = 0; i < form.length; i++) {
     // Handle date params later
     if (form.elements[i].name.startsWith('date-')) { continue; }
     slotParams[form.elements[i].name] = form.elements[i].value;
   }
+
   // Appointment start date and appointment end date need to both be set in query parameter 'start'
   slotParams['start'] = {$ge: form.elements['date-start'].value, $lt: form.elements['date-end'].value};
 
@@ -364,4 +366,3 @@ function clearPatientUI() {
   $('#patients').html('');
   $('#patients-holder-row').hide();
 }
-;
