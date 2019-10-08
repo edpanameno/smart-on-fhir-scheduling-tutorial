@@ -1,3 +1,4 @@
+// Submits data to search the cerner ignite api
 $('#slot-search-form').on('submit', function(e) {
   e.preventDefault();
   slotSearch();
@@ -17,8 +18,17 @@ function slotSearch() {
   var slotParams = {};
 
   for(var i = 0; i < form.length; i++) {
-    // Handle date params later
-    if (form.elements[i].name.startsWith('date-')) { continue; }
+    // for now, just ignore anything with date infront of it, we only
+    // want to get the data that has been selected by the user from the
+    // select elements
+    if(form.elements[i].name.startsWith('date-')) { 
+      continue; 
+    }
+
+    // Name of select field and the value. The name field gets values
+    // like the following: 'schedule.actor', '-location', 'slot-type'
+    // look up the documentation on what parameters can be sent to search
+    // for slots.
     slotParams[form.elements[i].name] = form.elements[i].value;
   }
 

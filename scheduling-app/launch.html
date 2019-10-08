@@ -3,10 +3,12 @@
   <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <title>Scheduling App</title>
+    <title>EdPanameno's Scheduling App</title>
 
     <!-- Bootstrap css -->
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
+          integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
+          crossorigin='anonymous'>
 
     <!-- Application-level css -->
     <link rel='stylesheet' type='text/css' href='./src/css/scheduling-app.css'>
@@ -25,6 +27,10 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script>
+      // This is where we send the authorization to cerner by passing the client_id of
+      // the application you have created. If the authentication is successful, then 
+      // the user will be redirected to the index.html page where all the magic is 
+      // happening.
       FHIR.oauth2.authorize({
         'client_id': '800cd252-5974-4cc8-b747-e5a23b043d0e',
         'scope': 'user/Appointment.write user/Patient.read user/Patient.write user/Slot.read launch online_access openid profile'
