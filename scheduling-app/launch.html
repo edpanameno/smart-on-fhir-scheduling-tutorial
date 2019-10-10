@@ -30,7 +30,8 @@
       // This is where we send the authorization to cerner by passing the client_id of
       // the application you have created. If the authentication is successful, then 
       // the user will be redirected to the index.html page where all the magic is 
-      // happening.
+      // happening. Note: The client_id below is not to be treated as a secret so it is ok
+      // to include it here.
       FHIR.oauth2.authorize({
         'client_id': '800cd252-5974-4cc8-b747-e5a23b043d0e',
         'scope': 'user/Appointment.write user/Patient.read user/Patient.write user/Slot.read launch online_access openid profile'
